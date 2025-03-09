@@ -1,0 +1,44 @@
+[
+  {
+    "question": "What is JavaScript?",
+    "answers": [
+      { "text": "A programming language", "isCorrect": true },
+      { "text": "A type of coffee", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "What is React?",
+    "answers": [
+      { "text": "A JavaScript library", "isCorrect": true },
+      { "text": "A database", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "What does CSS stand for?",
+    "answers": [
+      { "text": "Cascading Style Sheets", "isCorrect": true },
+      { "text": "Computer Style System", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "What is Git used for?",
+    "answers": [
+      { "text": "Version control", "isCorrect": true },
+      { "text": "Graphic editing", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "What is an API?",
+    "answers": [
+      { "text": "Application Programming Interface", "isCorrect": true },
+      { "text": "Advanced Processor Instruction", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "What is TypeScript?",
+    "answers": [
+      { "text": "A superset of JavaScript", "isCorrect": true },
+      { "text": "A styling language", "isCorrect": false }
+    ]
+  }
+]

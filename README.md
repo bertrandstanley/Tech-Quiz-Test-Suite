@@ -1,3 +1,5 @@
+![alt text](<Test Quiz Test Suite.png>)
+
 # Tech Quiz Test Suite
 ![License](https://img.shields.io/badge/license-MIT-blue)
 

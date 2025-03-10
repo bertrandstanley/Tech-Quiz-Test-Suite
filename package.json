@@ -20,8 +20,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@cypress/react": "^8.0.0",
-    "@types/react": "^18.3.3",
+    "@types/react": "^19.0.0",
     "@vitejs/plugin-react": "^4.3.1",
     "concurrently": "^8.2.2",
     "cypress": "^13.13.1",
@@ -32,5 +31,9 @@
     "typescript": "^5.5.3",
     "vitest": "^2.0.3",
     "wait-on": "^7.2.0"
+  },
+  "dependencies": {
+    "@cypress/react": "^9.0.0",
+    "@types/react-dom": "^19.0.0"
   }
 }

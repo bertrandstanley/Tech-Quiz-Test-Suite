@@ -1,8 +1,14 @@
 {
     "extends": "../tsconfig.json",
-    "include": ["**/*.ts", "**/*.tsx"],
-    "compilerOptions": {
-      "types": ["cypress", "@cypress/react"],
-      "noEmit": true
-    }
+    // "include": ["**/*.ts", "**/*.tsx"],
+   "compilerOptions": {
+  "types": ["cypress", "@cypress/react"],
+  "module": "ESNext",  // Updated for better compatibility
+  "noEmit": true,
+  "moduleResolution": "node",  // More standard for most setups
+  "paths": {
+    "react/jsx-runtime": ["./node_modules/react/jsx-runtime"]
+        }
+    },
+    "include": ["cypress/**/*.ts", "cypress/**/*.tsx"]
   }

@@ -1,14 +1,12 @@
-import { mount } from 'cypress/react18';
+import { mount } from '@cypress/react';
 import Quiz from '../../client/src/components/Quiz';
-import { getQuestions } from '../../client/src/services/questionApi.js';
+import { getQuestions } from '../../client/src/services/questionApi'; // Import the named export
 
-// Define the Question type (copied from your Question model, adjust if different)
 interface Question {
   question: string;
   answers: { text: string; isCorrect: boolean }[];
 }
 
-// Mock questions data with TypeScript type
 const mockQuestions: Question[] = [
   {
     question: 'What is JavaScript?',
@@ -56,8 +54,11 @@ const mockQuestions: Question[] = [
 
 describe('Quiz Component', () => {
   beforeEach(() => {
-    // Mock the getQuestions API call (assuming it returns Promise<Question[]>)
-    cy.stub(getQuestions as any, 'default').resolves(mockQuestions);
+    // Intercept the API request and mock the response
+    cy.intercept('/api/questions/random', {
+      statusCode: 200,
+      body: mockQuestions,
+    }).as('getQuestions');
   });
 
   it('renders the start button initially and starts quiz on click', () => {
@@ -78,12 +79,20 @@ describe('Quiz Component', () => {
     cy.get('.btn-primary').contains('Start Quiz').click();
     cy.get('.btn-primary').contains('1').click();
     cy.get('.btn-primary').contains('1').click();
-    cy.get('.alert-success').contains('Your score: 2/2').should('be.visible');
+    cy.get('.btn-primary').contains('1').click();
+    cy.get('.btn-primary').contains('1').click();
+    cy.get('.btn-primary').contains('1').click();
+    cy.get('.btn-primary').contains('1').click();
+    cy.get('.alert-success').contains('Your score: 6/6').should('be.visible');
     cy.get('.btn-primary').contains('Take New Quiz').should('be.visible');
   });
 
   it('shows loading spinner when questions are not yet loaded', () => {
-    cy.stub(getQuestions as any, 'default').resolves([]);
+    // Intercept with an empty response for loading state
+    cy.intercept('/api/questions/random', {
+      statusCode: 200,
+      body: [],
+    }).as('getQuestionsEmpty');
     mount(<Quiz />);
     cy.get('.btn-primary').contains('Start Quiz').click();
     cy.get('.spinner-border').should('be.visible');

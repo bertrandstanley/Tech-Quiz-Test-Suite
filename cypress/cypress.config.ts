@@ -4,10 +4,10 @@ export default defineConfig({
   component: {
     devServer: {
       framework: 'react',
-      bundler: 'vite', // Adjust if using webpack
+      bundler: 'vite',  // Make sure Vite is correctly configured
     },
   },
   e2e: {
-    baseUrl: 'http://127.0.0.1:3001',
+    baseUrl: 'http://localhost:3001', // Ensure your app is running at this URL
   },
 });

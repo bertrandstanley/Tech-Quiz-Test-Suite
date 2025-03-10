@@ -1,6 +1,6 @@
 import express from 'express';
 import path from 'node:path';
-
+import cors from 'cors';  
 import db from './config/connection.js';
 import routes from './routes/index.js';
 
@@ -12,6 +12,13 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(routes);
+
+app.use(cors({
+  origin: 'http://127.0.0.1:3000',  
+  methods: ['GET', 'POST'],
+  credentials: true,
+}));
+
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/dist')));

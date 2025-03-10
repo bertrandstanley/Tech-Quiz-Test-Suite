@@ -1,14 +1,29 @@
 {
-    "extends": "../tsconfig.json",
-    // "include": ["**/*.ts", "**/*.tsx"],
-   "compilerOptions": {
-  "types": ["cypress", "@cypress/react"],
-  "module": "ESNext",  // Updated for better compatibility
-  "noEmit": true,
-  "moduleResolution": "node",  // More standard for most setups
-  "paths": {
-    "react/jsx-runtime": ["./node_modules/react/jsx-runtime"]
-        }
-    },
-    "include": ["cypress/**/*.ts", "cypress/**/*.tsx"]
-  }
+  "extends": "../tsconfig.json", 
+  // Extend from the base `tsconfig.json` file in the parent directory, inheriting common TypeScript settings.
+
+  "compilerOptions": {
+    "types": ["cypress", "@cypress/react"],  
+    // Specify the types that should be included. Here, we are including types for Cypress and Cypress React testing support.
+
+    "module": "ESNext",  
+    // Use the latest ECMAScript module system, allowing for modern JavaScript features.
+
+    "noEmit": true,  
+    // Prevent TypeScript from generating output files during compilation. This is useful when you're using TypeScript for type checking but not generating code.
+
+    "moduleResolution": "node",  
+    // Use Node.js-style module resolution, which helps TypeScript to find and resolve modules similarly to how Node.js does.
+
+    "paths": {
+      "react/jsx-runtime": ["./node_modules/react/jsx-runtime"]
+      // Define custom paths for module resolution. Here, we make sure TypeScript can find the `jsx-runtime` from React correctly.
+    }
+  },
+
+  "include": [
+    "cypress/**/*.ts", 
+    "cypress/**/*.tsx"
+    // Include all TypeScript and TypeScript React files under the `cypress` folder for type checking.
+  ]
+}

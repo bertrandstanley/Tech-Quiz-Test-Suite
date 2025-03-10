@@ -1,8 +1,10 @@
 import db from '../config/connection.js';
-import { Question } from '../models/index.js'
+import { Question } from '../models/index.js';
 import cleanDB from './cleanDb.js';
 
-import questionData from './pythonQuestions.json' assert{ type: 'json'};
+
+// Use require to import JSON file
+import questionData from './pythonQuestions.json';
 
 try {
   await db();

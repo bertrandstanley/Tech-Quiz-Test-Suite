@@ -88,7 +88,9 @@ The following images show the web application's appearance and functionality:
 
 ## Video Demo
 
-[Click Here](https://youtu.be/doM3SfX5spk) to view a video demo of the tests and quiz.
+[Click Here](https://youtu.be/doM3SfX5spk) to watch a video of the tests running in the GUI, along with a demo of the quiz app.
+
+[Click Here](https://youtu.be/LYntA5LdbyA) to watch another video where I run the tests directly in VS Code.
 
 ## License
 

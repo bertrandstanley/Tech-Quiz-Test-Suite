@@ -14,7 +14,12 @@
     "build": "cd server && npm run build",
     "seed": "cd server && npm run seed",
     "render-build": "npm install && npm run build",
-    "test": "cypress open"
+    "test" : "npx cypress run --browser electron",
+    "test-component": "npx cypress run --component",
+    "test-e2e": "npx cypress run --e2e",
+    "test-all": "npm run test-component && npm run test-e2e",
+    "test-gui": "npx cypress open"
+
   },
   "keywords": [],
   "author": "",
